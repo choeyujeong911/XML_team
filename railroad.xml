@@ -1,77 +1,340 @@
 <?xml version="1.0" encoding="euc-kr"?>
-<!-- ëª¨ë“  íƒœê·¸ì˜ ì´ë¦„ê³¼ ì†ì„± ì´ë¦„ì€ ì˜ì–´ ì†Œë¬¸ìž(ì¤„ìž„ë§, ê³ ìœ ëª…ì‚¬ì˜ ì‹œìž‘ ì•ŒíŒŒë²³ ì œì™¸)ì™€ ì–¸ë”ë°”(_)ë¡œ ìž‘ì„±í•˜ë©°, -->
-<!-- ì†ì„±ê°’ê³¼ í…ìŠ¤íŠ¸ì˜ ê²½ìš° í•œê¸€ë¡œ í˜•ì‹ì„ ë§žì¶”ì–´ ì ëŠ”ë‹¤. -->
-<!-- ì†ì„± ì´ë¦„ê³¼ = ê¸°í˜¸, 'ì†ì„±ê°’' ì‚¬ì´ì—ëŠ” ê³µë°±ì´ ì—†ì–´ì•¼ í•œë‹¤. -->
-<!-- ëª¨ë“  ì†ì„±ê³¼ íƒœê·¸ëŠ” ì‚¬ì „ì„ ì°¸ê³ í•˜ì—¬ ë²”ìš©ì ì¸ ë‹¨ì–´ë¡œ ê³¨ë¼ ì“´ë‹¤. -->
-<!-- ëª¨ë“  ì—­ëª…ì—ëŠ” 'ì—­'ì„ ë¶™ì¸ë‹¤. (ì˜ˆ: ì•ˆì‹¬ì—­) -->
-<!-- ëª¨ë“  ì§€ì—­ëª…ì€ 'XXì‹œ' í˜•íƒœë¡œ ìž‘ì„±í•œë‹¤. íŠ¹ë³„, ê´‘ì—­ ë“± 'ì‹œ' ì•žì˜ ê¸€ìžëŠ” ë—€ë‹¤. -->
-<!-- ê³ ìœ ëª…ì‚¬ì˜ ê²½ìš°, ìœ„í‚¤ ë“±ì„ ì°¸ê³ í•˜ì—¬ ê³µì‹ì ì¸ ì˜ë¬¸ëª…ìœ¼ë¡œ ì“´ë‹¤. -->
-<!-- ëª¨ë“  ì§€í•˜ì²  ì •ì°¨ì—­ì€ ì—­ idë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ìž‘ì„±í•œë‹¤. -->
-<!-- ê°œí†µì˜ˆì • ì •ì°¨ì—­ì˜ ê²½ìš°, typeì„ normalë¡œ í†µì¼í•œë‹¤. ì¢…ì ì—­ì€ ê°œí†µëœ ì—­ë§Œì„ ê¸°ì¤€ìœ¼ë¡œ í•œë‹¤. -->
-<!-- ëª¨ë“  ê¸°ì°¨ ì •ì°¨ì—­ì€ í•„ìˆ˜ì •ì°¨ì—­, ì„ íƒì •ì°¨ì—­ì„ ëª¨ë‘ ì•„ìš¸ëŸ¬ ì¤‘ë¶€-ë‚¨ë¶€ ì§€ë°© ìˆœìœ¼ë¡œ ìž‘ì„±í•œë‹¤. -->
-<!-- ë‚´ìš© ë³€ê²½ ë° ì˜¤íƒˆìž ìˆ˜ì • ì‹œ, ì•„ëž˜ì˜ ì–‘ì‹ì— ë§žì¶”ì–´ ë¡œê·¸(ê¸°ë¡)ë¥¼ ë‚¨ê²¨ì£¼ê¸° ë°”ëžŒ. -->
+<!-- ¸ðµç ÅÂ±×ÀÇ ÀÌ¸§°ú ¼Ó¼º ÀÌ¸§Àº ¿µ¾î ¼Ò¹®ÀÚ(ÁÙÀÓ¸», °íÀ¯¸í»çÀÇ ½ÃÀÛ ¾ËÆÄºª Á¦¿Ü)¿Í ¾ð´õ¹Ù(_)·Î ÀÛ¼ºÇÏ¸ç, -->
+<!-- ¼Ó¼º°ª°ú ÅØ½ºÆ®ÀÇ °æ¿ì ÇÑ±Û·Î Çü½ÄÀ» ¸ÂÃß¾î Àû´Â´Ù. -->
+<!-- ¼Ó¼º ÀÌ¸§°ú = ±âÈ£, "¼Ó¼º°ª" »çÀÌ¿¡´Â °ø¹éÀÌ ¾ø¾î¾ß ÇÑ´Ù. -->
+<!-- ¸ðµç ¼Ó¼º°ú ÅÂ±×´Â »çÀüÀ» Âü°íÇÏ¿© ¹ü¿ëÀûÀÎ ´Ü¾î·Î °ñ¶ó ¾´´Ù. -->
+<!-- ¸ðµç ¿ª¸í¿¡´Â "¿ª"À» ºÙÀÎ´Ù. (¿¹: ¾È½É¿ª) -->
+<!-- ¸ðµç Áö¿ª¸íÀº "XX½Ã" ÇüÅÂ·Î ÀÛ¼ºÇÑ´Ù. Æ¯º°, ±¤¿ª µî "½Ã" ¾ÕÀÇ ±ÛÀÚ´Â ¶¾´Ù. -->
+<!-- °íÀ¯¸í»çÀÇ °æ¿ì, À§Å° µîÀ» Âü°íÇÏ¿© °ø½ÄÀûÀÎ ¿µ¹®¸íÀ¸·Î ¾´´Ù. -->
+<!-- ¸ðµç ÁöÇÏÃ¶ Á¤Â÷¿ªÀº ¿ª id¸¦ ±âÁØÀ¸·Î ¿À¸§Â÷¼øÀ¸·Î ÀÛ¼ºÇÑ´Ù. -->
+<!-- mark´Â 'XX(°Ç¹°ÀÌ¸§)¿ª'¿¡¼­ °Ç¹°ÀÌ¸§¿¡ ÇØ´çÇÏ´Â ¿ä¼Ò·Î, ³ª¹«À§Å° ±âÁØÀ¸·Î Á¸ÀçÇÏ´Â ¿ª¸¸ Àû´Â´Ù.-->
+<!-- next_distance´Â ´ÙÀ½¿ª°úÀÇ °Å¸®(km)¸¦ ½Ç¼ö·Î ³ªÅ¸³½ °ÍÀ¸·Î, Á¾Á¡¿ª°ú °³Åë¿¹Á¤¿ªÀ» Á¦¿ÜÇÑ ¸ðµç ¿ª¿¡ Àû´Â´Ù. -->
+<!-- °³Åë¿¹Á¤ Á¤Â÷¿ªÀÇ °æ¿ì, typeÀ» normal·Î ÅëÀÏÇÑ´Ù. Á¾Á¡¿ªÀº °³ÅëµÈ ¿ª¸¸À» ±âÁØÀ¸·Î ÇÑ´Ù. -->
+<!-- ¸ðµç ±âÂ÷ Á¤Â÷¿ªÀº ÇÊ¼öÁ¤Â÷¿ª, ¼±ÅÃÁ¤Â÷¿ªÀ» ¸ðµÎ ¾Æ¿ï·¯ ÁßºÎ-³²ºÎ Áö¹æ ¼øÀ¸·Î ÀÛ¼ºÇÑ´Ù. -->
+<!-- ³»¿ë º¯°æ ¹× ¿ÀÅ»ÀÚ ¼öÁ¤ ½Ã, ¾Æ·¡ÀÇ ¾ç½Ä¿¡ ¸ÂÃß¾î ·Î±×(±â·Ï)¸¦ ³²°ÜÁÖ±â ¹Ù¶÷. -->
 
-<!-- ë³€ê²½ì‚¬í•­ (ìž‘ì„±: YYYY.MM.DD, í™ê¸¸ë™) -->
-<!-- ì „ì²´ êµ¬ì¡° ë””ìžì¸ ë° 1í˜¸ì„  ì •ë³´ ìž‘ì„± (ìž‘ì„±: 2023.11.21, ìµœìœ ì •) -->
+<!-- º¯°æ»çÇ× (ÀÛ¼º: YYYY.MM.DD, È«±æµ¿) -->
+<!-- ÀüÃ¼ ±¸Á¶ µðÀÚÀÎ ¹× 1È£¼± Á¤º¸ ÀÛ¼º (ÀÛ¼º: 2023.11.21, ÃÖÀ¯Á¤) -->
 
-<!-- í•´ë‹¹ ì§€ì—­ì„ ì§€ë‚˜ëŠ” ì² ë„ì˜ ì •ë³´ë¥¼ ì •ë¦¬í•œë‹¤. -->
-<railroad region='ëŒ€êµ¬ì‹œ'>
-	<!-- ì§€í•˜ì² ì„ ë…¸ì„ -ì •ì°¨ì—­ ë³„ë¡œ ë¶„ë¥˜í•˜ì—¬ ì •ë¦¬í•œë‹¤. -->
-	<subway co='ëŒ€êµ¬êµí†µê³µì‚¬'>
-		<line1 type='ì§€í•˜'>
-			<station id='115' type='last' pub='open'>
-				<name>ì„¤í™”ëª…ê³¡ì—­</name>
-				<region>ëŒ€êµ¬ì‹œ</region>
-				<gu>ë‹¬ì„±êµ°</gu>
+<!-- ÇØ´ç Áö¿ªÀ» Áö³ª´Â Ã¶µµÀÇ Á¤º¸¸¦ Á¤¸®ÇÑ´Ù. -->
+<railroad region="´ë±¸½Ã">
+	<!-- ÁöÇÏÃ¶À» ³ë¼±-Á¤Â÷¿ª º°·Î ºÐ·ùÇÏ¿© Á¤¸®ÇÑ´Ù. -->
+	<subway co="´ë±¸±³Åë°ø»ç">
+		<line1 type="ÁöÇÏ">
+			<station id="115" type="first" pub="open">
+				<name lang="ko">¼³È­¸í°î¿ª</name>
+				<name lang="en">SeolhwaMyeonggok</name>
+				<region>´ë±¸½Ã</region>
+				<gu>´Þ¼º±º</gu>
+				<next_distance>1.2</next_distance>
 			</station>
-			<station id='H1' type='normal' pub='due'>
-				<name>ëŒ€êµ¬í•œì˜ëŒ€ë³‘ì›ì—­</name>
-				<region>ëŒ€êµ¬ì‹œ</region>
-				<gu>ë™êµ¬</gu>
+			<station id="116" type="normal" pub="open">
+				<name lang="ko">È­¿ø¿ª</name>
+				<name lang="en">Hwawon</name>
+				<region>´ë±¸½Ã</region>
+				<gu>´Þ¼º±º</gu>
+				<next_distance>1.3</next_distance>
 			</station>
-			<station id='H2' type='normal' pub='due'>
-				<name>ë¶€í˜¸ê²½ì¼ëŒ€í˜¸ì‚°ëŒ€ì—­</name>
-				<region>ê²½ì‚°ì‹œ</region>
-				<gu>í•˜ì–‘ì</gu>
+			<station id="117" type="normal" pub="open">
+				<name lang="ko">´ë°î¿ª</name>
+				<name lang="en">Daegok</name>
+				<region>´ë±¸½Ã</region>
+				<gu>´Þ¼­±¸</gu>
+				<mark>Á¤ºÎ´ë±¸Ã»»ç</mark>
+				<next_distance>1.1</next_distance>
 			</station>
-			<station id='H3' type='normal' pub='due'>
-				<name>í•˜ì–‘ëŒ€êµ¬ê°€í†¨ë¦­ëŒ€ì—­</name>
-				<region>ê²½ì‚°ì‹œ</region>
-				<gu>í•˜ì–‘ì</gu>
+			<station id="118" type="normal" pub="open">
+				<name lang="ko">ÁøÃµ¿ª</name>
+				<name lang="en">Jincheon</name>
+				<region>´ë±¸½Ã</region>
+				<gu>´Þ¼­±¸</gu>
+				<mark>º¸°­º´¿ø</mark>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="119" type="normal" pub="open">
+				<name lang="ko">¿ù¹è¿ª</name>
+				<name lang="en">Wolbae</name>
+				<region>´ë±¸½Ã</region>
+				<gu>´Þ¼­±¸</gu>
+				<next_distance>0.7</next_distance>
+			</station>
+			<station id="120" type="normal" pub="open">
+				<name lang="ko">»óÀÎ¿ª</name>
+				<name lang="en">Sangin</name>
+				<region>´ë±¸½Ã</region>
+				<gu>´Þ¼­±¸</gu>
+				<mark>´ë±¸º¸ÈÆº´¿ø</mark>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="121" type="normal" pub="open">
+				<name lang="ko">¿ùÃÌ¿ª</name>
+				<name lang="en">Wolchon</name>
+				<region>´ë±¸½Ã</region>
+				<gu>´Þ¼­±¸</gu>
+				<next_distance>1.0</next_distance>
+			</station>
+			<station id="122" type="normal" pub="open">
+				<name lang="ko">¼ÛÇö¿ª</name>
+				<name lang="en">Songhyeon</name>
+				<region>´ë±¸½Ã</region>
+				<gu>´Þ¼­±¸</gu>
+				<mark>ÂüÁ¶Àºº´¿ø</mark>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="123" type="normal" pub="open">
+				<name lang="ko">¼­ºÎÁ¤·ùÀå¿ª</name>
+				<name lang="en">Seobu Bus Terminal</name>
+				<region>´ë±¸½Ã</region>
+				<gu>³²±¸</gu>
+				<mark>°ü¹®½ÃÀå¡¤´ë±¸°ø¾÷´ëÇÐ±³</mark>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="124" type="normal" pub="open">
+				<name lang="ko">´ë¸í¿ª</name>
+				<name lang="en">Daemyeong</name>
+				<region>´ë±¸½Ã</region>
+				<gu>³²±¸</gu>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="125" type="normal" pub="open">
+				<name lang="ko">¾ÈÁö¶û¿ª</name>
+				<name lang="en">Anjirang</name>
+				<region>´ë±¸½Ã</region>
+				<gu>³²±¸</gu>
+				<mark>´ë±¸°¡Åç¸¯´ëÇÐ±³º´¿ø</mark>
+				<next_distance>0.7</next_distance>
+			</station>
+			<station id="126" type="normal" pub="open">
+				<name lang="ko">ÇöÃæ·Î¿ª</name>
+				<name lang="en">Hyeonchungno</name>
+				<region>´ë±¸½Ã</region>
+				<gu>³²±¸</gu>
+				<next_distance>0.7</next_distance>
+			</station>
+			<station id="127" type="normal" pub="open">
+				<name lang="ko">¿µ´ëº´¿ø¿ª</name>
+				<name lang="en">Yeungnam Univ. Hospital</name>
+				<region>´ë±¸½Ã</region>
+				<gu>³²±¸</gu>
+				<mark>¿µ³²ÀÌ°ø´ëÇÐ±³</mark>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="128" type="normal" pub="open">
+				<name lang="ko">±³´ë¿ª</name>
+				<name lang="en">Nat'l Univ. of Education</name>
+				<region>´ë±¸½Ã</region>
+				<gu>³²±¸</gu>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="129" type="transfer" to='line1' pub="open">
+				<name lang="ko">¸í´ö¿ª</name>
+				<name lang="en">Myeongdeok</name>
+				<region>´ë±¸½Ã</region>
+				<gu>Áß±¸</gu>
+				<mark>2.28¹ÎÁÖ¿îµ¿±â³äÈ¸°ü</mark>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="130" type="transfer" to='line2' pub="open">
+				<name lang="ko">¹Ý¿ù´ç¿ª</name>
+				<name lang="en">Banwoldang</name>
+				<region>´ë±¸½Ã</region>
+				<gu>Áß±¸</gu>
+				<mark>½ºÅ¸¹ý¹«¹ýÀÎ</mark>
+				<next_distance>0.7</next_distance>
+			</station>
+			<station id="131" type="normal" pub="open">
+				<name lang="ko">Áß¾Ó·Î¿ª</name>
+				<name lang="en">Jungangno</name>
+				<region>´ë±¸½Ã</region>
+				<gu>Áß±¸</gu>
+				<next_distance>0.7</next_distance>
+			</station>
+			<station id="132" type="train" pub="open">
+				<name lang="ko">´ë±¸¿ª</name>
+				<name lang="en">Daegu Station</name>
+				<region>´ë±¸½Ã</region>
+				<gu>ºÏ±¸</gu>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="133" type="normal" pub="open">
+				<name lang="ko">Ä¥¼º½ÃÀå¿ª</name>
+				<name lang="en">Chilseong Market</name>
+				<region>´ë±¸½Ã</region>
+				<gu>ºÏ±¸</gu>
+				<mark>MSÀç°Çº´¿ø</mark>
+				<next_distance>1.3</next_distance>
+			</station>
+			<station id="134" type="normal" pub="open">
+				<name lang="ko">½ÅÃµ¿ª</name>
+				<name lang="en">Sincheon</name>
+				<region>´ë±¸½Ã</region>
+				<gu>µ¿±¸</gu>
+				<mark>°æºÏ´ëÀÔ±¸</mark>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="135" type="train" pub="open">
+				<name lang="ko">µ¿´ë±¸¿ª</name>
+				<name lang="en">Dongdaegu Station</name>
+				<region>´ë±¸½Ã</region>
+				<gu>µ¿±¸</gu>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="136" type="normal" pub="open">
+				<name lang="ko">µ¿±¸Ã»¿ª</name>
+				<name lang="en">Dong-gu Office</name>
+				<region>´ë±¸½Ã</region>
+				<gu>µ¿±¸</gu>
+				<mark>Å«°í°³</mark>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="137" type="normal" pub="open">
+				<name lang="ko">¾Æ¾ç±³¿ª</name>
+				<name lang="en">Ayanggyo</name>
+				<region>´ë±¸½Ã</region>
+				<gu>µ¿±¸</gu>
+				<mark>´ë±¸±¹Á¦°øÇ×ÀÔ±¸</mark>
+			</station>
+			<station id="138" type="normal" pub="open">
+				<name lang="ko">µ¿ÃÌ¿ª</name>
+				<name lang="en">Dongchon</name>
+				<region>´ë±¸½Ã</region>
+				<gu>µ¿±¸</gu>
+				<mark>µ¿ÃÌÀ¯¿øÁö</mark>
+				<next_distance>1.1</next_distance>
+			</station>
+			<station id="139" type="normal" pub="open">
+				<name lang="ko">ÇØ¾È¿ª</name>
+				<name lang="en">Haean</name>
+				<region>´ë±¸½Ã</region>
+				<gu>µ¿±¸</gu>
+				<next_distance>1.0</next_distance>
+			</station>
+			<station id="140" type="normal" pub="open">
+				<name lang="ko">¹æÃÌ¿ª</name>
+				<name lang="en">Bangchon</name>
+				<region>´ë±¸½Ã</region>
+				<gu>µ¿±¸</gu>
+				<next_distance>1.1</next_distance>
+			</station>
+			<station id="141" type="normal" pub="open">
+				<name lang="ko">¿ë°è¿ª</name>
+				<name lang="en">Yonggye</name>
+				<region>´ë±¸½Ã</region>
+				<gu>µ¿±¸</gu>
+				<next_distance>1.2</next_distance>
+			</station>
+			<station id="142" type="normal" pub="open">
+				<name lang="ko">À²ÇÏ¿ª</name>
+				<name lang="en">Yulha</name>
+				<region>´ë±¸½Ã</region>
+				<gu>µ¿±¸</gu>
+				<mark>Ç×½Ã¿ø¿Ü°ú</mark>
+				<next_distance>1.1</next_distance>
+			</station>
+			<station id="143" type="normal" pub="open">
+				<name lang="ko">½Å±â¿ª</name>
+				<name lang="en">Singi</name>
+				<region>´ë±¸½Ã</region>
+				<gu>µ¿±¸</gu>
+				<mark>½Å±âÇÑ¼Ó³»°úÀÇ¿ø</mark>
+				<next_distance>1.0</next_distance>
+			</station>
+			<station id="144" type="normal" pub="open">
+				<name lang="ko">¹Ý¾ß¿ù¿ª</name>
+				<name lang="en">Banyawol</name>
+				<region>´ë±¸½Ã</region>
+				<gu>µ¿±¸</gu>
+				<next_distance>1.0</next_distance>
+			</station>
+			<station id="145" type="normal" pub="open">
+				<name lang="ko">°¢»ê¿ª</name>
+				<name lang="en">Gaksan</name>
+				<region>´ë±¸½Ã</region>
+				<gu>µ¿±¸</gu>
+				<mark>¼Ó¾È½É³»°ú¿¬ÇÕÀÇ¿ø</mark>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="146" type="last" pub="open">
+				<name lang="ko">¾È½É¿ª</name>
+				<name lang="en">Ansim</name>
+				<region>´ë±¸½Ã</region>
+				<gu>µ¿±¸</gu>
+				<mark>Çõ½Åµµ½Ã¡¤Ã·º¹´ÜÁö</mark>
+			</station>
+
+			<station id="147" type="normal" pub="due">
+				<name lang="ko">´ë±¸ÇÑÀÇ´ëº´¿ø¿ª</name>
+				<name lang="en">Daegu Haany University Hospital</name>
+				<region>´ë±¸½Ã</region>
+				<gu>µ¿±¸</gu>
+			</station>
+			<station id="148" type="normal" pub="due">
+				<name lang="ko">ºÎÈ£°æÀÏ´ëÈ£»ê´ë¿ª</name>
+				<name lang="en">Buho, Kyungil University, and Hosan University</name>
+				<region>°æ»ê½Ã</region>
+				<gu>ÇÏ¾çÀ¾</gu>
+			</station>
+			<station id="149" type="normal" pub="due">
+				<name lang="ko">ÇÏ¾ç´ë±¸°¡Åç¸¯´ë¿ª</name>
+				<name lang="en">Hayang Daegu Catholic University</name>
+				<region>°æ»ê½Ã</region>
+				<gu>ÇÏ¾çÀ¾</gu>
 			</station>
 		</line1>
 
-		<line2 type='ì§€í•˜'>
+		<line2 type="ÁöÇÏ">
+			<station id="216" type="first" pub="open">
+				<name lang="ko">¹®¾ç¿ª</name>
+				<name lang="en">Munyang</name>
+				<region>´ë±¸½Ã</region>
+				<gu>´Þ¼º±º</gu>
+				<next_distance>2.9</next_distance>
+			</station>
+			<station id="217" type="normal" pub="open">
+				<name lang="ko">´Ù»ç¿ª</name>
+				<name lang="en">Dasa</name>
+				<region>´ë±¸½Ã</region>
+				<gu>´Þ¼º±º</gu>
+				<next_distance>1.0</next_distance>
+			</station>
+			<station id="218" type="normal" pub="open">
+				<name lang="ko">´ë½Ç¿ª</name>
+				<name lang="en">Daesil</name>
+				<region>´ë±¸½Ã</region>
+				<gu>´Þ¼º±º</gu>
+				<mark>Á×°î¿¬ÇÕÅëÁõÀÇÇÐ°ú</mark>
+				<next_distance>1.4</next_distance>
+			</station>
 		</line2>
 		
-		<line3 type='ì§€ìƒ'>
+		<line3 type="Áö»ó">
 		</line3>
 	</subway>
 	
-	<!-- ê¸°ì°¨ë¥¼ ì—´ì°¨ì¢…ë¥˜-ì •ì°¨ì—­ ë³„ë¡œ ë¶„ë¥˜í•˜ì—¬ ì •ë¦¬í•œë‹¤. -->
-	<train co='í•œêµ­ì² ë„ê³µì‚¬'>
-		<ITX_Saemaeul line='ê²½ë¶€ì„ ' speed='ì¼ë°˜'>
+	<!-- ±âÂ÷¸¦ ¿­Â÷Á¾·ù-Á¤Â÷¿ª º°·Î ºÐ·ùÇÏ¿© Á¤¸®ÇÑ´Ù. -->
+	<train co="ÇÑ±¹Ã¶µµ°ø»ç">
+		<ITX_Saemaeul line="°æºÎ¼±" speed="ÀÏ¹Ý">
 		</ITX_Saemaeul>
 		
-		<Mugunghwa_Ho line='ê²½ë¶€ì„ ' speed='ì¼ë°˜'>
-			<station stop='necessary' type='last'>
-				<name>ì„œìš¸ì—­</name>
-				<region>ì„œìš¸ì‹œ</region>
+		<Mugunghwa_Ho line="°æºÎ¼±" speed="ÀÏ¹Ý">
+			<station stop="necessary" type="last">
+				<name lang="ko">¼­¿ï¿ª</name>
+				<region>¼­¿ï½Ã</region>
 			</station>
-			<station stop='selective' type='normal'>
-				<name>ì•ˆì–‘ì—­</name>
+			<station stop="selective" type="normal">
+				<name lang="ko">¾È¾ç¿ª</name>
 				<region></region>
 			</station>
-			<station stop='necessary' type='normal'>
-				<name>ë™ëŒ€êµ¬ì—­</name>
-				<region>ëŒ€êµ¬ì‹œ</region>
+			<station stop="necessary" type="normal">
+				<name lang="ko">µ¿´ë±¸¿ª</name>
+				<region>´ë±¸½Ã</region>
 			</station>
 		</Mugunghwa_Ho>
 		
-		<KTX line='ê²½ë¶€ì„ ' speed='ê³ ì†'>
+		<KTX line="°æºÎ¼±" speed="°í¼Ó">
 		</KTX>
 		
-		<KTX line='ê²½ë¶€ì„ ' speed='ì¼ë°˜'>
+		<KTX line="°æºÎ¼±" speed="ÀÏ¹Ý">
 		</KTX>
 	</train>
 </railroad>
