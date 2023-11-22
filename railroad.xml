@@ -11,16 +11,20 @@
 <!-- next_distance는 다음역과의 거리(km)를 실수로 나타낸 것으로, 종점역과 개통예정역을 제외한 모든 역에 적는다. -->
 <!-- 개통예정 정차역의 경우, type을 normal로 통일한다. 종점역은 개통된 역만을 기준으로 한다. -->
 <!-- 모든 기차 정차역은 필수정차역, 선택정차역을 모두 아울러 중부-남부 지방 순으로 작성한다. -->
+<!-- 기차역의 종점은 필수정차역만을 고려하여 작성한다. -->
 <!-- 내용 변경 및 오탈자 수정 시, 아래의 양식에 맞추어 로그(기록)를 남겨주기 바람. -->
 
 <!-- 변경사항 (작성: YYYY.MM.DD, 홍길동) -->
-<!-- 전체 구조 디자인 및 1호선 정보 작성 (작성: 2023.11.21, 최유정) -->
+<!-- 전체 구조 디자인 및 1호선, 기차역 정보 작성 (작성: 2023.11.21, 최유정) -->
+<!-- 2호선 정보 작성 (작성: 2023.11.22, 정지효) -->
+<!-- 3호선 정보 작성 (작성: 2023.11.22, 장효비) -->
+<!-- 지하철 정보 병합 및 기차역 정보 작성 (작성: 2023.11.22, 최유정) -->
 
 <!-- 해당 지역을 지나는 철도의 정보를 정리한다. -->
 <railroad region="대구시">
 	<!-- 지하철을 노선-정차역 별로 분류하여 정리한다. -->
 	<subway co="대구교통공사">
-		<line1 type="지하">
+		<line num="1" type="지하" color="red">
 			<station id="115" type="first" pub="open">
 				<name lang="ko">설화명곡역</name>
 				<name lang="en">SeolhwaMyeonggok</name>
@@ -126,7 +130,7 @@
 				<gu>남구</gu>
 				<next_distance>0.8</next_distance>
 			</station>
-			<station id="129" type="transfer" to='line1' pub="open">
+			<station id="129" type="transfer" to='1' pub="open">
 				<name lang="ko">명덕역</name>
 				<name lang="en">Myeongdeok</name>
 				<region>대구시</region>
@@ -134,7 +138,7 @@
 				<mark>2.28민주운동기념회관</mark>
 				<next_distance>0.8</next_distance>
 			</station>
-			<station id="130" type="transfer" to='line2' pub="open">
+			<station id="130" type="transfer" to='2' pub="open">
 				<name lang="ko">반월당역</name>
 				<name lang="en">Banwoldang</name>
 				<region>대구시</region>
@@ -280,9 +284,9 @@
 				<region>경산시</region>
 				<gu>하양읍</gu>
 			</station>
-		</line1>
+		</line>
 
-		<line2 type="지하">
+		<line num="2" type="지하" color="green">
 			<station id="216" type="first" pub="open">
 				<name lang="ko">문양역</name>
 				<name lang="en">Munyang</name>
@@ -305,36 +309,1171 @@
 				<mark>죽곡연합통증의학과</mark>
 				<next_distance>1.4</next_distance>
 			</station>
-		</line2>
+			<station id="219" type="normal" pub="open">
+				<name lang="ko">강창역</name>
+				<name lang="en">Gangchang</name>
+				<region>대구시</region>
+				<gu>달서구</gu>
+				<next_distance>1.3</next_distance>
+			</station>
+			<station id="220" type="normal" pub="open">
+				<name lang="ko">계명대역</name>
+				<name lang="en">Keimyung University</name>
+				<region>대구시</region>
+				<gu>달서구</gu>
+				<next_distance>1.2</next_distance>
+			</station>
+			<station id="221" type="normal" pub="open">
+				<name lang="ko">성서산업단지역</name>
+				<name lang="en">Seongseo Industrial Complex</name>
+				<region>대구시</region>
+				<gu>달서구</gu>
+				<mark>(주)엘엔에프</mark>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="222" type="normal" pub="open">
+				<name lang="ko">이곡역</name>
+				<name lang="en">Igok</name>
+				<region>대구시</region>
+				<gu>달서구</gu>
+				<next_distance>1.3</next_distance>
+			</station>
+			<station id="223" type="normal" pub="open">
+				<name lang="ko">용산역</name>
+				<name lang="en">Yongsan</name>
+				<region>대구시</region>
+				<gu>달서구</gu>
+				<mark>서부법원·검찰청입구</mark>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="224" type="normal" pub="open">
+				<name lang="ko">죽전역</name>
+				<name lang="en">Jukjeon</name>
+				<region>대구시</region>
+				<gu>달서구</gu>
+				<mark>구병원</mark>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="225" type="normal" pub="open">
+				<name lang="ko">감삼역</name>
+				<name lang="en">Gamsam</name>
+				<region>대구시</region>
+				<gu>달서구</gu>
+				<mark>대구S한방병원</mark>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="226" type="normal" pub="open">
+				<name lang="ko">두류역</name>
+				<name lang="en">Duryu</name>
+				<region>대구시</region>
+				<gu>달서구</gu>
+				<mark>대구기독병원</mark>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="227" type="normal" pub="open">
+				<name lang="ko">내당역</name>
+				<name lang="en">Naedang</name>
+				<region>대구시</region>
+				<gu>서구</gu>
+				<mark>참튼튼병원</mark>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="228" type="normal" pub="open">
+				<name lang="ko">반고개역</name>
+				<name lang="en">Bangogae</name>
+				<region>대구시</region>
+				<gu>달서구</gu>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="229" type="transfer" to="3" pub="open">
+				<name lang="ko">청라언덕역</name>
+				<name lang="en">Cheongna Hill</name>
+				<region>대구시</region>
+				<gu>중구</gu>
+				<mark>척탑병원</mark>
+				<next_distance>1.0</next_distance>
+			</station>
+			<station id="230" type="transfer" to="1" pub="open">
+				<name lang="ko">반월당역</name>
+				<name lang="en">Banwoldang</name>
+				<region>대구시</region>
+				<gu>중구</gu>
+				<mark>스타법무법인</mark>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="231" type="normal" pub="open">
+				<name lang="ko">경대병원역</name>
+				<name lang="en">Kyungpook Nat'l Univ. Hospital</name>
+				<region>대구시</region>
+				<gu>중구</gu>
+				<mark>미르치과병원</mark>
+				<next_distance>1.1</next_distance>
+			</station>
+			<station id="232" type="normal" pub="open">
+				<name lang="ko">대구은행역</name>
+				<name lang="en">Daegu Bank</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<mark>대구교육청</mark>
+				<next_distance>1.0</next_distance>
+			</station>
+			<station id="233" type="normal" pub="open">
+				<name lang="ko">범어역</name>
+				<name lang="en">Beomeo</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<mark>법무법인대륜</mark>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="234" type="normal" pub="open">
+				<name lang="ko">수성구청역</name>
+				<name lang="en">Suseong-gu Office</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<mark>KBS</mark>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="235" type="normal" pub="open">
+				<name lang="ko">만촌역</name>
+				<name lang="en">Manchon</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="236" type="normal" pub="open">
+				<name lang="ko">담티역</name>
+				<name lang="en">Damti</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<mark>수성대·대륜</mark>
+				<next_distance>1.8</next_distance>
+			</station>
+			<station id="237" type="normal" pub="open">
+				<name lang="ko">연호역</name>
+				<name lang="en">Yeonho</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<next_distance>1.0</next_distance>
+			</station>
+			<station id="238" type="normal" pub="open">
+				<name lang="ko">대공원역</name>
+				<name lang="en">Daegu Grand Park</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<mark>삼성라이온즈파크</mark>
+				<next_distance>1.2</next_distance>
+			</station>
+			<station id="239" type="normal" pub="open">
+				<name lang="ko">고산역</name>
+				<name lang="en">Gosan</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<next_distance>1.1</next_distance>
+			</station>
+			<station id="240" type="normal" pub="open">
+				<name lang="ko">신매역</name>
+				<name lang="en">Sinmae</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<next_distance>1.1</next_distance>
+			</station>
+			<station id="241" type="normal" pub="open">
+				<name lang="ko">사월역</name>
+				<name lang="en">Sawol</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<next_distance>1.2</next_distance>
+			</station>
+			<station id="242" type="normal" pub="open">
+				<name lang="ko">정평역</name>
+				<name lang="en">Jeongpyeong</name>
+				<region>경산시</region>
+				<gu>대학로</gu>
+				<next_distance>1.1</next_distance>
+			</station>
+			<station id="243" type="normal" pub="open">
+				<name lang="ko">임당역</name>
+				<name lang="en">Imdang</name>
+				<region>경산시</region>
+				<gu>대학로</gu>
+				<next_distance>1.1</next_distance>
+			</station>
+			<station id="244" type="last" pub="open">
+				<name lang="ko">영남대역</name>
+				<name lang="en">Yeungnam University</name>
+				<region>경산시</region>
+				<gu>대학로</gu>
+			</station>
+		</line>
 		
-		<line3 type="지상">
-		</line3>
+		<line num="3" type="지상" color="yellow">
+			<station id="312" type="first" pub="open">
+				<name lang="ko">칠곡경대병원역</name>
+				<name lang="en">Chilgok Kyungpook Nat'l Univ. Medical Center</name>
+				<region>대구시</region>
+				<gu>북구</gu>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="313" type="normal" pub="open">
+				<name lang="ko">학정역</name>
+				<name lang="en">Hakjeong</name>
+				<region>대구시</region>
+				<gu>북구</gu>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="314" type="normal" pub="open">
+				<name lang="ko">팔거역</name>
+				<name lang="en">Palgeo</name>
+				<region>대구시</region>
+				<gu>북구</gu>
+				<next_distance>0.7</next_distance>
+				<mark>국립농관원·통계청</mark>
+			</station>
+			<station id="315" type="normal" pub="open">
+				<name lang="ko">동천역</name>
+				<name lang="en">Dongcheon</name>
+				<region>대구시</region>
+				<gu>북구</gu>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="316" type="normal" pub="open">
+				<name lang="ko">칠곡운암역</name>
+				<name lang="en">Chilgok·Unam</name>
+				<region>대구시</region>
+				<gu>북구</gu>
+				<next_distance>0.7</next_distance>
+			</station>
+			<station id="317" type="normal" pub="open">
+				<name lang="ko">구암역</name>
+				<name lang="en">Guam</name>
+				<region>대구시</region>
+				<gu>북구</gu>
+				<next_distance>0.7</next_distance>
+				<mark>과학대·보건대입구</mark>
+			</station>
+			<station id="318" type="normal" pub="open">
+				<name lang="ko">태전역</name>
+				<name lang="en">Taejeon</name>
+				<region>대구시</region>
+				<gu>북구</gu>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="319" type="normal" pub="open">
+				<name lang="ko">매천역</name>
+				<name lang="en">Maecheon</name>
+				<region>대구시</region>
+				<gu>북구</gu>
+				<next_distance>1.1</next_distance>
+			</station>
+			<station id="320" type="normal" pub="open">
+				<name lang="ko">매천시장역</name>
+				<name lang="en">Maecheon Market</name>
+				<region>대구시</region>
+				<gu>북구</gu>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="321" type="normal" pub="open">
+				<name lang="ko">팔달역</name>
+				<name lang="en">Paldal</name>
+				<region>대구시</region>
+				<gu>북구</gu>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="322" type="normal" pub="open">
+				<name lang="ko">공단역</name>
+				<name lang="en">Gongdan</name>
+				<region>대구시</region>
+				<gu>서구</gu>
+				<next_distance>0.7</next_distance>
+			</station>
+			<station id="323" type="normal" pub="open">
+				<name lang="ko">만평역</name>
+				<name lang="en">Manpyeong</name>
+				<region>대구시</region>
+				<gu>서구</gu>
+				<next_distance>0.6</next_distance>
+			</station>
+			<station id="324" type="normal" pub="open">
+				<name lang="ko">팔달시장역</name>
+				<name lang="en">Paldal Market</name>
+				<region>대구시</region>
+				<gu>북구</gu>
+				<next_distance>0.6</next_distance>
+			</station>
+			<station id="325" type="normal" pub="open">
+				<name lang="ko">원대역</name>
+				<name lang="en">Wondae</name>
+				<region>대구시</region>
+				<gu>서구</gu>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="326" type="normal" pub="open">
+				<name lang="ko">북구청역</name>
+				<name lang="en">Buk-gu Office</name>
+				<region>대구시</region>
+				<gu>서구</gu>
+				<next_distance>0.9</next_distance>
+				<mark>DGB대구은행파크</mark>
+			</station>
+			<station id="327" type="normal" pub="open">
+				<name lang="ko">달성공원역</name>
+				<name lang="en">Dalseong Park</name>
+				<region>대구시</region>
+				<gu>중구</gu>
+				<next_distance>0.7</next_distance>
+			</station>
+			<station id="328" type="normal" pub="open">
+				<name lang="ko">서문시장역</name>
+				<name lang="en">Seomun Market</name>
+				<region>대구시</region>
+				<gu>중구</gu>
+				<next_distance>0.6</next_distance>
+				<mark>동산병원</mark>
+			</station>
+			<station id="329" type="transfer" to="2" pub="open">
+				<name lang="ko">청라언덕역</name>
+				<name lang="en">Cheongna Hill</name>
+				<region>대구시</region>
+				<gu>중구</gu>
+				<next_distance>0.9</next_distance>
+				<mark>척탑병원</mark>
+			</station>
+			<station id="330" type="normal" pub="open">
+				<name lang="ko">남산역</name>
+				<name lang="en">Namsan</name>
+				<region>대구시</region>
+				<gu>중구</gu>
+				<next_distance>0.6</next_distance>
+				<mark>계명네거리</mark>
+			</station>
+			<station id="331" type="transfer" to="1" pub="open">
+				<name lang="ko">명덕역</name>
+				<name lang="en">Myeongdeok</name>
+				<region>대구시</region>
+				<gu>남구</gu>
+				<next_distance>0.9</next_distance>
+				<mark>2.28민주운동기념회관</mark>
+			</station>
+			<station id="332" type="normal" pub="open">
+				<name lang="ko">건들바위역</name>
+				<name lang="en">Geondeulbawi</name>
+				<region>대구시</region>
+				<gu>남구</gu>
+				<next_distance>0.6</next_distance>
+			</station>
+			<station id="333" type="normal" pub="open">
+				<name lang="ko">대봉교역</name>
+				<name lang="en">Daebonggyo</name>
+				<region>대구시</region>
+				<gu>남구</gu>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="334" type="normal" pub="open">
+				<name lang="ko">수성시장역</name>
+				<name lang="en">Suseong Market</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<next_distance>1.0</next_distance>
+			</station>
+			<station id="335 " type="normal" pub="open">
+				<name lang="ko">수성구민운동장역</name>
+				<name lang="en">Suseong District Stadium</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<next_distance>0.8</next_distance>
+			</station>
+			<station id="336 " type="normal" pub="open">
+				<name lang="ko">어린이세상역</name>
+				<name lang="en">Children's World</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<next_distance>0.7</next_distance>
+			</station>
+			<station id="337 " type="normal" pub="open">
+				<name lang="ko">황금역</name>
+				<name lang="en">Hwanggeum</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="338" type="normal" pub="open">
+				<name lang="ko">수성못역</name>
+				<name lang="en">Suseongmot</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<next_distance>1.1</next_distance>
+				<mark>TBC</mark>
+			</station>
+			<station id="339" type="normal" pub="open">
+				<name lang="ko">지산역</name>
+				<name lang="en">Jisan</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<next_distance>0.9</next_distance>
+			</station>
+			<station id="340" type="normal" pub="open">
+				<name lang="ko">범물역</name>
+				<name lang="en">Beommul</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+				<next_distance>0.7</next_distance>
+			</station>
+			<station id="341" type="last" pub="open">
+				<name lang="ko">용지역</name>
+				<name lang="en">Yongji</name>
+				<region>대구시</region>
+				<gu>수성구</gu>
+			</station>
+		</line>
 	</subway>
 	
 	<!-- 기차를 열차종류-정차역 별로 분류하여 정리한다. -->
 	<train co="한국철도공사">
-		<ITX_Saemaeul line="경부선" speed="일반">
+		<ITX_Saemaeul speed="일반">
+			<!-- 열차 정보 -->
+			<info>
+				<name lang="ko">ITX-새마을</name>
+				<name lang="en">ITX-Saemaeul</name>
+			</info>
+
+			<!-- 운임 정보 -->
+			<charge>
+				<min_distance>50</min_distance>
+				<fare type="minimum">4800</fare>
+				<fare type="normal">96</fare>
+				<fare type="premium">144</fare>
+				<additory_per type="premium">50</additory_per>
+			</charge>
+
+			<!-- ITX-새마을 경부선(부산) -->
+			<line num="302" track="경부선" type="부산">
+				<station type="first" stop="necessary">
+					<name lang="ko">서울역</name>
+					<name lang="en">Seoul</name>
+					<region>서울시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">영등포역</name>
+					<name lang="en">Yeongdeungpo</name>
+					<region>서울시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">수원역</name>
+					<name lang="en">Suwon</name>
+					<region>수원시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">평택역</name>
+					<name lang="en">Pyeongtaek</name>
+					<region>평택시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">천안역</name>
+					<name lang="en">Cheonan</name>
+					<region>천안시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">조치원역</name>
+					<name lang="en">Jochiwon</name>
+					<region>세종시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">신탄진역</name>
+					<name lang="en">Sintanjin</name>
+					<region>대전시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">대전역</name>
+					<name lang="en">Daejeon</name>
+					<region>대전시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">옥천역</name>
+					<name lang="en">Okcheon</name>
+					<region>옥천군</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">영동역</name>
+					<name lang="en">Yeongdong</name>
+					<region>영동군</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">김천역</name>
+					<name lang="en">Gimcheon</name>
+					<region>김천시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">구미역</name>
+					<name lang="en">Gumi</name>
+					<region>구미시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">왜관역</name>
+					<name lang="en">Waegwan</name>
+					<region>칠곡군</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">대구역</name>
+					<name lang="en">Daegu</name>
+					<region>대구시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">동대구역</name>
+					<name lang="en">Dongdaegu</name>
+					<region>대구시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">경산역</name>
+					<name lang="en">Gyeongsan</name>
+					<region>경산시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">청도역</name>
+					<name lang="en">Cheongdo</name>
+					<region>청도군</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">밀양역</name>
+					<name lang="en">Miryang</name>
+					<region>밀양시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">삼랑진역</name>
+					<name lang="en">Samnangjin</name>
+					<region>밀양시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">물금역</name>
+					<name lang="en">Mulgeum</name>
+					<region>양산시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">구포역</name>
+					<name lang="en">Gupo</name>
+					<region>부산시</region>
+				</station>
+				<station type="last" stop="necessary">
+					<name lang="ko">부산역</name>
+					<name lang="en">Busan</name>
+					<region>부산시</region>
+				</station>
+			</line>
+			<!-- ITX-새마을 경부선(신해운대) -->
+			<line num="302" track="경부선" type="신해운대">
+				<station type="first" stop="necessary">
+					<name lang="ko">서울역</name>
+					<name lang="en">Seoul</name>
+					<region>서울시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">영등포역</name>
+					<name lang="en">Yeongdeungpo</name>
+					<region>서울시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">수원역</name>
+					<name lang="en">Suwon</name>
+					<region>수원시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">평택역</name>
+					<name lang="en">Pyeongtaek</name>
+					<region>평택시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">천안역</name>
+					<name lang="en">Cheonan</name>
+					<region>천안시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">조치원역</name>
+					<name lang="en">Jochiwon</name>
+					<region>세종시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">신탄진역</name>
+					<name lang="en">Sintanjin</name>
+					<region>대전시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">대전역</name>
+					<name lang="en">Daejeon</name>
+					<region>대전시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">옥천역</name>
+					<name lang="en">Okcheon</name>
+					<region>옥천군</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">영동역</name>
+					<name lang="en">Yeongdong</name>
+					<region>영동군</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">김천역</name>
+					<name lang="en">Gimcheon</name>
+					<region>김천시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">구미역</name>
+					<name lang="en">Gumi</name>
+					<region>구미시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">왜관역</name>
+					<name lang="en">Waegwan</name>
+					<region>칠곡군</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">대구역</name>
+					<name lang="en">Daegu</name>
+					<region>대구시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">동대구역</name>
+					<name lang="en">Dongdaegu</name>
+					<region>대구시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">경산역</name>
+					<name lang="en">Gyeongsan</name>
+					<region>경산시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">청도역</name>
+					<name lang="en">Cheongdo</name>
+					<region>청도군</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">밀양역</name>
+					<name lang="en">Miryang</name>
+					<region>밀양시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">구포역</name>
+					<name lang="en">Gupo</name>
+					<region>부산시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">부전역</name>
+					<name lang="en">Bujeon</name>
+					<region>부산시</region>
+				</station>
+				<station type="last" stop="necessary">
+					<name lang="ko">신해운대역</name>
+					<name lang="en">Sinhaeundae</name>
+					<region>부산시</region>
+				</station>
+			</line>
 		</ITX_Saemaeul>
-		
-		<Mugunghwa_Ho line="경부선" speed="일반">
-			<station stop="necessary" type="last">
-				<name lang="ko">서울역</name>
-				<region>서울시</region>
-			</station>
-			<station stop="selective" type="normal">
-				<name lang="ko">안양역</name>
-				<region></region>
-			</station>
-			<station stop="necessary" type="normal">
-				<name lang="ko">동대구역</name>
-				<region>대구시</region>
-			</station>
+
+		<Mugunghwa_Ho speed="일반">
+			<!-- 열차 정보 -->
+			<info>
+				<name lang="ko">무궁화호</name>
+				<name lang="en">Mugunghwa-Ho</name>
+			</info>
+
+			<!-- 운임 정보 -->
+			<charge>
+				<min_distance>40</min_distance>
+				<fare type="minimum">2600</fare>
+				<fare type="normal">65</fare>
+			</charge>
+
+			<!-- 무궁화호 경부선 -->
+			<line num="302" track="경부선">
+				<station type="first" stop="necessary">
+					<name lang="ko">서울역</name>
+					<name lang="en">Seoul</name>
+					<region>서울시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">영등포역</name>
+					<name lang="en">Yeongdeungpo</name>
+					<region>서울시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">안양역</name>
+					<name lang="en">Anyang</name>
+					<region>안양시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">수원역</name>
+					<name lang="en">Suwon</name>
+					<region>수원시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">오산역</name>
+					<name lang="en">Osan</name>
+					<region>오산시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">서정리역</name>
+					<name lang="en">Seojeong-ri</name>
+					<region>평택시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">평택역</name>
+					<name lang="en">Pyeongtaek</name>
+					<region>평택시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">성환역</name>
+					<name lang="en">Seonghwan</name>
+					<region>천안시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">천안역</name>
+					<name lang="en">Cheonan</name>
+					<region>천안시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">전의역</name>
+					<name lang="en">Jeonui</name>
+					<region>세종시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">조치원역</name>
+					<name lang="en">Jochiwon</name>
+					<region>세종시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">부강역</name>
+					<name lang="en">Bugang</name>
+					<region>세종시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">신탄진역</name>
+					<name lang="en">Sintanjin</name>
+					<region>대전시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">대전역</name>
+					<name lang="en">Daejeon</name>
+					<region>대전시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">옥천역</name>
+					<name lang="en">Okcheon</name>
+					<region>옥천군</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">이원역</name>
+					<name lang="en">Iwon</name>
+					<region>옥천군</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">지탄역</name>
+					<name lang="en">Jitan</name>
+					<region>옥천군</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">심천역</name>
+					<name lang="en">Simcheon</name>
+					<region>영동군</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">각계역</name>
+					<name lang="en">Gakgye</name>
+					<region>영동군</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">영동역</name>
+					<name lang="en">Yeongdong</name>
+					<region>영동군</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">황간역</name>
+					<name lang="en">Hwanggan</name>
+					<region>영동군</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">추풍령역</name>
+					<name lang="en">Chupungnyeong</name>
+					<region>영동군</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">김천역</name>
+					<name lang="en">Gimcheon</name>
+					<region>김천시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">구미역</name>
+					<name lang="en">Gumi</name>
+					<region>구미시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">약목역</name>
+					<name lang="en">Yangmok</name>
+					<region>칠곡군</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">왜관역</name>
+					<name lang="en">Waegwan</name>
+					<region>칠곡군</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">신동역</name>
+					<name lang="en">Sindong</name>
+					<region>칠곡군</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">대구역</name>
+					<name lang="en">Daegu</name>
+					<region>대구시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">동대구역</name>
+					<name lang="en">Dongdaegu</name>
+					<region>대구시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">경산역</name>
+					<name lang="en">Gyeongsan</name>
+					<region>경산시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">남성현역</name>
+					<name lang="en">Namseonghyeon</name>
+					<region>청도군</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">청도역</name>
+					<name lang="en">Cheongdo</name>
+					<region>청도군</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">상동역</name>
+					<name lang="en">Sangdong</name>
+					<region>밀양시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">밀양역</name>
+					<name lang="en">Miryang</name>
+					<region>밀양시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">삼랑진역</name>
+					<name lang="en">Samnangjin</name>
+					<region>밀양시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">원동역</name>
+					<name lang="en">Wondong</name>
+					<region>양산시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">물금역</name>
+					<name lang="en">Mulgeum</name>
+					<region>양산시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">화명역</name>
+					<name lang="en">Hwamyeong</name>
+					<region>부산시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">구포역</name>
+					<name lang="en">Gupo</name>
+					<region>부산시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">사상역</name>
+					<name lang="en">Sasang</name>
+					<region>부산시</region>
+				</station>
+				<station type="last" stop="necessary">
+					<name lang="ko">부산역</name>
+					<name lang="en">Busan</name>
+					<region>부산시</region>
+				</station>
+			</line>
+			<!-- 무궁화호 대구선 -->
+			<line num="30210" track="대구선">
+				<station type="first" stop="necessary">
+					<name lang="ko">동대구역</name>
+					<name lang="en">Dongdaegu</name>
+					<region>대구시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">하양역</name>
+					<name lang="en">Hayang</name>
+					<region>경산시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">영천역</name>
+					<name lang="en">Yeongcheon</name>
+					<region>영천시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">아화역</name>
+					<name lang="en">Ahwa</name>
+					<region>경주시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">신경주역</name>
+					<name lang="en">Singyeongju</name>
+					<region>경주시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">북울산역</name>
+					<name lang="en">Bugulsan</name>
+					<region>울산시</region>
+					<mark>박상진생가</mark>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">태화강역</name>
+					<name lang="en">Taehwagang</name>
+					<region>울산시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">남창역</name>
+					<name lang="en">Namchang</name>
+					<region>울산시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">기장역</name>
+					<name lang="en">Gijang</name>
+					<region>부산시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">신해운대역</name>
+					<name lang="en">Sinhaeundae</name>
+					<region>부산시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">센텀역</name>
+					<name lang="en">Centum</name>
+					<region>부산시</region>
+				</station>
+				<station type="last" stop="necessary">
+					<name lang="ko">부전역</name>
+					<name lang="en">Bujeon</name>
+					<region>부산시</region>
+				</station>
+			</line>
 		</Mugunghwa_Ho>
-		
-		<KTX line="경부선" speed="고속">
+
+		<KTX speed="고속">
+			<!-- 열차 정보 -->
+			<info>
+			<name lang="ko">KTX</name>
+			<name lang="en">KTX</name>
+			</info>
+
+			<!-- 운임 정보 -->
+			<charge>
+				<min_distance>50</min_distance>
+				<fare type="minimum">8400</fare>
+				<fare type="normal">164</fare>
+				<fare type="premium">230</fare>
+				<additory_per type="premium">40</additory_per>
+			</charge>
+
+			<!-- KTX 경부고속선 -->
+			<line num="101" track="경부고속선">
+				<station type="normal" stop="selective">
+					<name lang="ko">행신역</name>
+					<name lang="en">Haengsin</name>
+					<region>고양시</region>
+				</station>
+				<station type="first" stop="necessary">
+					<name lang="ko">서울역</name>
+					<name lang="en">Seoul</name>
+					<region>서울시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">광명역</name>
+					<name lang="en">Gwangmyeong</name>
+					<region>광명시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">천안아산역</name>
+					<name lang="en">Cheonan-Asan</name>
+					<region>아산시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">오송역</name>
+					<name lang="en">Osong</name>
+					<region>청주시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">대전역</name>
+					<name lang="en">Daejeon</name>
+					<region>대전시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">김천(구미)역</name>
+					<name lang="en">Gimcheon(Gumi)</name>
+					<region>김천시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">서대구역</name>
+					<name lang="en">Seodaegu</name>
+					<region>대구시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">동대구역</name>
+					<name lang="en">Dongdaegu</name>
+					<region>대구시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">신경주역</name>
+					<name lang="en">Singyeongju</name>
+					<region>경주시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">울산역</name>
+					<name lang="en">Ulsan</name>
+					<region>울산시</region>
+				</station>
+				<station type="last" stop="necessary">
+					<name lang="ko">부산역</name>
+					<name lang="en">Busan</name>
+					<region>부산시</region>
+				</station>
+			</line>
 		</KTX>
-		
-		<KTX line="경부선" speed="일반">
+
+		<KTX speed="일반">
+			<!-- 열차 정보 -->
+			<info>
+				<name lang="ko">KTX</name>
+				<name lang="en">KTX</name>
+			</info>
+
+			<!-- 운임 정보 -->
+			<charge>
+				<min_distance>80</min_distance>
+				<fare type="minimum">8400</fare>
+				<fare type="normal">112</fare>
+				<fare type="premium">157</fare>
+				<additory_per type="premium">40</additory_per>
+			</charge>
+
+			<!-- KTX 경부선(수원)-->
+			<line num="302" track="경부선" type="수원">
+				<station type="first" stop="necessary">
+					<name lang="ko">서울역</name>
+					<name lang="en">Seoul</name>
+					<region>서울시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">영등포역</name>
+					<name lang="en">Yeongdeungpo</name>
+					<region>서울시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">수원역</name>
+					<name lang="en">Suwon</name>
+					<region>수원시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">대전역</name>
+					<name lang="en">Daejeon</name>
+					<region>대전시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">김천(구미)역</name>
+					<name lang="en">Gimcheon(Gumi)</name>
+					<region>김천시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">서대구역</name>
+					<name lang="en">Seodaegu</name>
+					<region>대구시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">동대구역</name>
+					<name lang="en">Dongdaegu</name>
+					<region>대구시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">신경주역</name>
+					<name lang="en">Singyeongju</name>
+					<region>경주시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">울산역</name>
+					<name lang="en">Ulsan</name>
+					<region>울산시</region>
+				</station>
+				<station type="last" stop="necessary">
+					<name lang="ko">부산역</name>
+					<name lang="en">Busan</name>
+					<region>부산시</region>
+				</station>
+			</line>
+			<!-- KTX 경부선(구포)-->
+			<line num="302" track="경부선" type="구포">
+				<station type="normal" stop="selective">
+					<name lang="ko">행신역</name>
+					<name lang="en">Haengsin</name>
+					<region>고양시</region>
+				</station>
+				<station type="first" stop="necessary">
+					<name lang="ko">서울역</name>
+					<name lang="en">Seoul</name>
+					<region>서울시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">광명역</name>
+					<name lang="en">Gwangmyeong</name>
+					<region>광명시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">천안아산역</name>
+					<name lang="en">Cheonan-Asan</name>
+					<region>아산시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">오송역</name>
+					<name lang="en">Osong</name>
+					<region>청주시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">대전역</name>
+					<name lang="en">Daejeon</name>
+					<region>대전시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">김천(구미)역</name>
+					<name lang="en">Gimcheon(Gumi)</name>
+					<region>김천시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">서대구역</name>
+					<name lang="en">Seodaegu</name>
+					<region>대구시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">동대구역</name>
+					<name lang="en">Dongdaegu</name>
+					<region>대구시</region>
+				</station>
+				<station type="normal" stop="selective">
+					<name lang="ko">경산역</name>
+					<name lang="en">Gyeongsan</name>
+					<region>경산시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">밀양역</name>
+					<name lang="en">Miryang</name>
+					<region>밀양시</region>
+				</station>
+				<station type="normal" stop="necessary">
+					<name lang="ko">구포역</name>
+					<name lang="en">Gupo</name>
+					<region>부산시</region>
+				</station>
+				<station type="last" stop="necessary">
+					<name lang="ko">부산역</name>
+					<name lang="en">Busan</name>
+					<region>부산시</region>
+				</station>
+			</line>
 		</KTX>
 	</train>
 </railroad>
