@@ -1,0 +1,49 @@
+<!ELEMENT railroad		(metro+, train+)>
+<!ATTLIST railroad region CDATA #REQUIRED>
+
+<!ELEMENT metro			(subway+)>
+<!ATTLIST metro co CDATA #REQUIRED>
+
+<!ELEMENT train			(ITX_Saemaeul*, Mugunghwa_Ho*, KTX*)>
+<!ATTLIST train co CDATA #REQUIRED>
+
+<!ELEMENT subway		(info, line+)>
+<!ATTLIST subway no ID #REQUIRED> 
+
+<!ELEMENT ITX_Saemaeul	(info, charge, line+)>
+<!ELEMENT Mugunghwa_Ho	(info, charge, line+)>
+<!ELEMENT KTX			(info, charge, line+)>
+<!ELEMENT info			(title+)>
+<!ELEMENT charge		(min_distance, fare+)>
+
+<!ELEMENT line			(station+)>
+<!ATTLIST line num CDATA #REQUIRED>
+<!ATTLIST line track CDATA #IMPLIED>
+<!ATTLIST line type CDATA #IMPLIED>
+
+<!ELEMENT station		(name+, region) |
+						(name+, region, gu, next_distance?, mark?)>
+<!ATTLIST station id ID #REQUIRED>
+<!ATTLIST station index (first|normal|last) "normal">
+<!ATTLIST station type (train|transfer|normal) "normal">
+<!ATTLIST station to CDATA #IMPLIED>
+<!ATTLIST station pub (open|due) "open">
+<!ATTLIST station stop (necessary|selective) "necessary">
+
+<!ELEMENT title			(#PCDATA)>
+<!ATTLIST title lang (ko|en) #REQUIRED>
+<!ELEMENT min_distance	(#PCDATA)>
+<!ATTLIST min_distance units CDATA #FIXED "Km">
+<!ELEMENT fare			(#PCDATA)>
+<!ATTLIST fare type (premium|normal) "normal">
+<!ATTLIST fare units (minimum|per_Km) "per_Km">
+
+<!ELEMENT name			(#PCDATA)>
+<!ATTLIST name lang (ko|en) #REQUIRED>
+<!ATTLIST name type (main|sub) "main">
+
+<!ELEMENT region		(#PCDATA)>
+<!ELEMENT gu			(#PCDATA)>
+<!ELEMENT next_distance	(#PCDATA)>
+<!ELEMENT next_distance units CDATA #FIXED "Km">
+<!ELEMENT mark			(#PCDATA)>
