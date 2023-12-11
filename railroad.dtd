@@ -8,11 +8,16 @@
 <!ATTLIST train co CDATA #REQUIRED>
 
 <!ELEMENT subway		(info, line+)>
-<!ATTLIST subway no ID #REQUIRED> 
+<!ATTLIST subway no CDATA #REQUIRED>
+<!ATTLIST subway type CDATA #REQUIRED>
+<!ATTLIST subway color CDATA #REQUIRED>
 
 <!ELEMENT ITX_Saemaeul	(info, charge, line+)>
+<!ATTLIST ITX_Saemaeul speed #REQUIRED>
 <!ELEMENT Mugunghwa_Ho	(info, charge, line+)>
+<!ATTLIST Mugunghwa_Ho speed #REQUIRED>
 <!ELEMENT KTX			(info, charge, line+)>
+<!ATTLIST KTX speed #REQUIRED>
 <!ELEMENT info			(title+)>
 <!ELEMENT charge		(min_distance, fare+)>
 
@@ -23,12 +28,12 @@
 
 <!ELEMENT station		(name+, region) |
 						(name+, region, gu, next_distance?, mark?)>
-<!ATTLIST station id ID #REQUIRED>
+<!ATTLIST station id CDATA>
 <!ATTLIST station index (first|normal|last) "normal">
 <!ATTLIST station type (train|transfer|normal) "normal">
 <!ATTLIST station to CDATA #IMPLIED>
 <!ATTLIST station pub (open|due) "open">
-<!ATTLIST station stop (necessary|selective) "necessary">
+<!ATTLIST station stop (necessary|selective) #DEFAULT "necessary">
 
 <!ELEMENT title			(#PCDATA)>
 <!ATTLIST title lang (ko|en) #REQUIRED>
@@ -45,5 +50,4 @@
 <!ELEMENT region		(#PCDATA)>
 <!ELEMENT gu			(#PCDATA)>
 <!ELEMENT next_distance	(#PCDATA)>
-<!ELEMENT next_distance units CDATA #FIXED "Km">
 <!ELEMENT mark			(#PCDATA)>

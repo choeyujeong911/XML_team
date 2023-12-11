@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="euc-kr"?>
+<?xml-stylesheet type="text/xsl" href="railroad.xsl"?>
+<!--<!DOCTYPE railroad SYSTEM "railroad.dtd">-->
 <!-- 모든 태그의 이름과 속성 이름은 영어 소문자(줄임말, 고유명사의 시작 알파벳 제외)와 언더바(_)로 작성하며, -->
 <!-- 속성값과 텍스트의 경우 한글로 형식을 맞추어 적는다. -->
 <!-- 속성 이름과 = 기호,"속성값" 사이에는 공백이 없어야 한다. -->
@@ -1342,7 +1344,7 @@
 					<region>청주시</region>
 				</station>
 				<station>
-					<name lang="ko">대전역</name>
+					<name lang="ko">대전(역</name>
 					<name lang="en">Daejeon</name>
 					<region>대전시</region>
 				</station>
